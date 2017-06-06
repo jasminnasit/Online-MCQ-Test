@@ -9,6 +9,10 @@ package Admin;
  *
  * @author jasmin
  */
+import java.awt.*;
+import javax.swing.*;
+import java.io.*;
+
 public class AdminFrame extends javax.swing.JInternalFrame {
 
     /**
@@ -29,41 +33,129 @@ public class AdminFrame extends javax.swing.JInternalFrame {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
-        jPanel1 = new javax.swing.JPanel();
+        Desktopa = new javax.swing.JDesktopPane();
+        MainPanela = new javax.swing.JPanel();
+        DynamicPanela = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        addque = new javax.swing.JToggleButton();
+        rmvque = new javax.swing.JButton();
+        seeque = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(350, 350));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+        MainPanela.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout MainPanelaLayout = new javax.swing.GroupLayout(MainPanela);
+        MainPanela.setLayout(MainPanelaLayout);
+        MainPanelaLayout.setHorizontalGroup(
+            MainPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 459, Short.MAX_VALUE)
+        MainPanelaLayout.setVerticalGroup(
+            MainPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        Desktopa.setLayer(MainPanela, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout DesktopaLayout = new javax.swing.GroupLayout(Desktopa);
+        Desktopa.setLayout(DesktopaLayout);
+        DesktopaLayout.setHorizontalGroup(
+            DesktopaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DesktopaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MainPanela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        DesktopaLayout.setVerticalGroup(
+            DesktopaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DesktopaLayout.createSequentialGroup()
+                .addGap(435, 435, 435)
+                .addComponent(MainPanela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        DynamicPanela.setBackground(new java.awt.Color(255, 102, 102));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("WELCOME TO ADMIN PANEL");
+
+        addque.setText("ADD QUESTION");
+
+        rmvque.setText("REMOVE QUESTION");
+
+        seeque.setText("SEE QUESTION");
+
+        javax.swing.GroupLayout DynamicPanelaLayout = new javax.swing.GroupLayout(DynamicPanela);
+        DynamicPanela.setLayout(DynamicPanelaLayout);
+        DynamicPanelaLayout.setHorizontalGroup(
+            DynamicPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DynamicPanelaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DynamicPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DynamicPanelaLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(84, 84, 84))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DynamicPanelaLayout.createSequentialGroup()
+                        .addGroup(DynamicPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rmvque)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, DynamicPanelaLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(addque)))
+                        .addGap(202, 202, 202))))
+            .addGroup(DynamicPanelaLayout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(seeque)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        DynamicPanelaLayout.setVerticalGroup(
+            DynamicPanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DynamicPanelaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addque)
+                .addGap(34, 34, 34)
+                .addComponent(rmvque)
+                .addGap(110, 110, 110)
+                .addComponent(seeque)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(DynamicPanela, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(Desktopa))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(Desktopa)
+            .addComponent(DynamicPanela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public static void main(String args[]){
+        
+        
+        new AdminFrame().setVisible(true);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JDesktopPane Desktopa;
+    private javax.swing.JPanel DynamicPanela;
+    private javax.swing.JPanel MainPanela;
+    private javax.swing.JToggleButton addque;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JButton rmvque;
+    private javax.swing.JButton seeque;
     // End of variables declaration//GEN-END:variables
 }
